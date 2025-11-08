@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comodoro Joven Activo</title>
+
+    <link rel="stylesheet" href="inicio.css">
+    <style>
+        /* CSS simple para el logo, puedes integrarlo en inicio.css */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre el logo y el texto */
+        }
+        .navbar-logo img {
+            height: 25px; /* Ajusta la altura del logo al texto */
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.jpg" alt="Logo Comodoro Joven Activo"> 
+            <span>Comodoro Joven Activo</span>
+        </div>
+        
+        <div class="navbar-icons">
+            <a href="index.html">Inicio</a>
+            <a href="trabajo.index">Trabajo</a>
+            <a href="capacitaciones.index">Capacitaciones</a>
+            <a href="estudiantes.index">Estudiantes</a>
+            <a href="voluntariado.index">Voluntariado</a>
+            <a href="calendario.index">Calendario</a>
+            <a href="perfil.index">Perfil</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>Conectando jóvenes con <br><span>oportunidades únicas</span></h1>
+        <p>Descubre empleos, capacitaciones, voluntariados y conecta con otros estudiantes <br>
+        en la principal plataforma para jóvenes de la Patagonia</p>
+
+        <div class="hero-boxes">
+            <div class="hero-box"></div>
+            <div class="hero-box"></div>
+            <div class="hero-box"></div>
+        </div>
+        <a href="capacitaciones.index" class="btn-explorar">Explorar Capacitaciones →</a>
+    </div>
+
+    <div class="container">
+        <div class="section-header">
+            Sección Destacada
+            <input type="search" class="search-box" placeholder="🔍 Buscar oportunidades...">
+        </div>
+        <hr>
+
+        <div class="cards-container">
+
+            <div class="card">
+                <div class="card-header jobs">
+                    <div class="card-icon"></div>
+                    <div class="card-title">Últimas Ofertas Laborales</div>
+                    <span class="icon-small">⚡</span>
+                </div>
+                <div class="card-content">
+                    <div class="opportunity">
+                        <div class="job-title">Desarrollador Web Jr.</div>
+                        <div class="job-details">Tiempo completo · Comodoro Rivadavia</div>
+                        <div class="job-details price-range"> $180.000 - $220.000</div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="job-title">Cocinero/a Part-Time</div>
+                        <div class="job-details">Medio tiempo · Zona Centro</div>
+                        <div class="job-details price-range"> $120.000 - $150.000</div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="job-title">Asistente Administrativo</div>
+                        <div class="job-details">Tiempo completo · Remoto</div>
+                        <div class="job-details price-range"> $160.000 - $190.000</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="trabajo.index" class="btn-footer btn-ofertas">Ver Más Ofertas</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header courses">
+                    <div class="card-icon"></div>
+                    <div class="card-title">Últimos Cursos y Capacitaciones</div>
+                    <span class="icon-small">🟢</span>
+                </div>
+                <div class="card-content">
+                    <div class="opportunity">
+                        <div class="course-title">Marketing Digital</div>
+                        <div class="course-details">8 semanas · Virtual</div>
+                        <div class="course-details"><span class="badge">Gratuito</span> ⭐ 4.8 (234 estudiantes)</div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="course-title">Inglés Avanzado</div>
+                        <div class="course-details">16 semanas · Presencial</div>
+                        <div class="course-details"><span class="badge" style="background-color: #fff0cc; color: #ff9900;">Beca disponible</span> ⭐ 4.7 (298 estudiantes)</div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="course-title">Diseño UX/UI</div>
+                        <div class="course-details">10 semanas · Híbrido</div>
+                        <div class="course-details"><span class="badge">Gratuito</span> <span class="badge" style="background-color: #ffe0e0; color: #cc3333;">Nuevo</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="capacitaciones.index" class="btn-footer btn-cursos">Ver Todos Los Cursos</a>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="card-header volunteers">
+                    <div class="card-icon"></div>
+                    <div class="card-title">Próximos Voluntariados</div>
+                    <span class="icon-small">🧑‍🤝‍🧑</span>
+                </div>
+                <div class="card-content">
+                    <div class="opportunity">
+                        <div class="volunteer-title">Apoyo Escolar</div>
+                        <div class="volunteer-details">Sábados 14-17hs · Escuelas locales</div>
+                        <div class="volunteer-details"><span style="color: #0099cc;">15 voluntarios necesarios</span></div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="volunteer-title">Campaña de Donación</div>
+                        <div class="volunteer-details">Todo el mes · Centro de la ciudad</div>
+                        <div class="volunteer-details"> Meta: 500 donaciones</div>
+                    </div>
+                    <div class="opportunity">
+                        <div class="volunteer-title">Visitas a Adultos Mayores</div>
+                        <div class="volunteer-details">Domingos 15-18hs · Geriátricos</div>
+                        <div class="volunteer-details"> Actividad semanal</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="voluntariado.index" class="btn-footer btn-voluntario">¡Unirme como Voluntario!</a>
+                </div>
+            </div>
+
+        </div> 
+        <hr>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Comodoro Joven Activo</h3>
+                <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
+                <div class="footer-social">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="trabajo.index">Trabajos</a></li>
+                    <li><a href="capacitaciones.index">Capacitaciones</a></li>
+                    <li><a href="voluntariado.index">Voluntariados</a></li>
+                    <li><a href="estudiantes.index">Estudiantes</a></li>
+                </ul>
+            </div>
+            <div class="footer-box"> 
+                <h4>Ayuda y Soporte</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Atención al Cliente</a></li>
+                    <li><a href="#">Soporte Técnico</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h4>Contactar Desarrolladores</h4>
+                <ul>
+                    <li><a href="mailto:dev@comodoroja.com">Comodorocja@gmail.com</a></li>
+                    <li><a href="tel:+542972134567">+54 297 123-4567</a></li>
+                    <li>Chat en vivo: 9-18hs</li>
+                    <li><a href="#">@comodoroja_dev</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Comodoro Joven Activo — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
