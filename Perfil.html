@@ -4,244 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comodoro Joven Activo - Perfil</title>
-  <style>
-    /* -------- ESTILOS GENERALES Y LAYOUT -------- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", sans-serif;
-    }
-
-    body {
-      background: #eaf4ff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ============================================ */
-    /* ESTILOS ESTANDARIZADOS DE LA BARRA (INDEX/PERFIL) */
-    /* ============================================ */
-    header {
-      background-color: #0a3d91; /* Color principal de tu original perfil.index */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 50px;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo-container img {
-      height: 100px;
-      margin-right: 0,1px;
-    }
-
-    .logo-container span {
-      color: #fff;
-      font-weight: bold;
-      font-size: 15px;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 10px; /* Ajuste para mejor espaciado */
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* ============================================ */
-    /* ESTILOS ESTANDARIZADOS DEL FOOTER (INDEX/PERFIL) */
-    /* ============================================ */
-    footer {
-      background-color: #0b1936;
-      color: #fff;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 30px 20px;
-    }
-
-    footer div {
-      margin: 10px;
-      min-width: 200px;
-    }
-
-    footer h3 {
-      margin-bottom: 10px;
-      border-bottom: 2px solid #1c4ed8;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    footer p, footer a {
-      font-size: 14px;
-      color: #dcdcdc;
-    }
-
-    footer a:hover {
-      color: #fff;
-    }
-
-    .social-icons {
-      margin-top: 10px;
-    }
-
-    .social-icons a {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 30px;
-      color: #fff;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    .insta { background-color: #e1306c; }
-    .whats { background-color: #25d366; }
-
-    .copyright {
-      text-align: center;
-      color: #ccc;
-      margin-top: 10px;
-      font-size: 12px;
-      width: 100%;
-    }
-    
-    /* -------- ESTILOS DEL FORMULARIO PERFIL (MANTENIDOS) -------- */
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-    }
-
-    .form-card {
-      background: #fff;
-      width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-      overflow: hidden;
-    }
-
-    .form-header {
-      background-color: #0a3d91;
-      color: #fff;
-      text-align: center;
-      padding: 25px;
-    }
-
-    .form-header img {
-      width: 110px;
-      margin-bottom: 10px;
-    }
-
-    .tabs {
-      display: flex;
-    }
-
-    .tab {
-      flex: 1;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      background-color: #f5f5f5;
-      border-bottom: 2px solid transparent;
-      transition: 0.3s;
-    }
-
-    .tab.active {
-      background-color: #fff;
-      border-bottom: 2px solid #0a3d91;
-      font-weight: bold;
-    }
-
-    form {
-      padding: 20px;
-      display: none;
-    }
-
-    form.active {
-      display: block;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: 500;
-      color: #333;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 5px;
-    }
-
-    .checkbox {
-      margin-top: 10px;
-    }
-
-    button {
-      width: 100%;
-      background-color: #0a3d91;
-      color: #fff;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      margin-top: 15px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #072f6d;
-    }
-  </style>
+    <link rel="stylesheet" href="base.css"> 
 </head>
-<body>
+<body class="perfil-page">
 
     <header>
     <div class="logo-container">
-      <img src="descargar intento 100.png" alt="Logo Comodoro Joven Activo">
+            <img src="descargar intento 100.png" alt="Logo Comodoro Joven Activo">
       <span>Comodoro Joven Activo</span>
     </div>
     <nav>
             <a href="index.html">Inicio</a>
-      <a href="trabajo.index">Trabajo</a>
-      <a href="capacitacion.index">Capacitación</a>
-      <a href="estudiantes.index">Estudiantes</a>
-      <a href="voluntariado.index">Voluntariado</a>
-      <a href="calendario.index">Calendario</a>
-      <a href="perfil.index">Perfil</a>
+      <a href="trabajo.html">Trabajo</a>
+      <a href="capacitaciones.html">Capacitaciones</a>
+      <a href="estudiantes.html">Estudiantes</a>
+      <a href="voluntariado.html">Voluntariado</a>
+      <a href="calendario.html">Calendario</a>
+      <a href="perfil.html">Perfil</a>
     </nav>
   </header>
 
-    <main>
+    <main class="perfil-main">
     <div class="form-card">
       <div class="form-header">
-        <img src="descargar intento 100.png" alt="Logo">
+                <img src="descargar intento 100.png" alt="Logo">
         <h2>BIENVENIDO</h2>
         <p>a Comodoro Jóvenes Activo</p>
       </div>
@@ -307,10 +93,10 @@
 
     <div>
       <h3>Enlaces Rápidos</h3>
-      <a href="#">Trabajos</a><br>
-      <a href="#">Capacitaciones</a><br>
-      <a href="#">Voluntariados</a><br>
-      <a href="#">Estudiantes</a>
+      <a href="trabajo.html">Trabajos</a><br>
+      <a href="capacitaciones.html">Capacitaciones</a><br>
+      <a href="voluntariado.html">Voluntariados</a><br>
+      <a href="estudiantes.html">Estudiantes</a>
     </div>
 
     <div>
@@ -322,7 +108,7 @@
 
     <div>
       <h3>Contactar Desarrolladores</h3>
-      <p>📧 dev@comodoroja.com</p>
+      <p>📧 Comodorocja@gmail.com</p>
       <p>📞 +54 297 123-4567</p>
       <p>💬 Chat en vivo: 9–18hs</p>
       <p>📸 @comodoroja_dev</p>
@@ -335,7 +121,7 @@
 
 
   <script>
-    // CAMBIO ENTRE PESTAÑAS
+    // CÓDIGO JAVASCRIPT DEL PERFIL (CAMBIO ENTRE PESTAÑAS)
     const tabRegister = document.getElementById('tab-register');
     const tabLogin = document.getElementById('tab-login');
     const formRegister = document.getElementById('form-register');
@@ -354,6 +140,10 @@
       formLogin.classList.add('active');
       formRegister.classList.remove('active');
     });
+  </script>
+
+</body>
+</html>
   </script>
 
 </body>
