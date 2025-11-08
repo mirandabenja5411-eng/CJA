@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comodoro Joven Activo - Perfil</title>
-    <link rel="stylesheet" href="inicio.css"> 
   <style>
-    /* -------- ESTILOS GENERALES -------- */
+    /* -------- ESTILOS GENERALES Y LAYOUT -------- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -26,24 +25,105 @@
       color: inherit;
     }
 
-    /* -------- AJUSTES ESPECÍFICOS PARA LA BARRA DEL INDEX -------- */
-    /* Necesario si el CSS del index no carga el estilo completo aquí */
-    .navbar-icons a {
-        color: white; 
-        text-decoration: none; 
-        margin-left: 18px; 
-    }
-    .navbar-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .navbar-logo img {
-        height: 25px; 
-        width: auto;
-    }
+    /* ============================================ */
+    /* ESTILOS ESTANDARIZADOS DE LA BARRA (INDEX/PERFIL) */
+    /* ============================================ */
+    header {
+      background-color: #0a3d91; /* Color principal de tu original perfil.index */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+    }
 
-    /* -------- FORMULARIO PERFIL (SIN CAMBIOS) -------- */
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 100px;
+      margin-right: 0,1px;
+    }
+
+    .logo-container span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px; /* Ajuste para mejor espaciado */
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================================ */
+    /* ESTILOS ESTANDARIZADOS DEL FOOTER (INDEX/PERFIL) */
+    /* ============================================ */
+    footer {
+      background-color: #0b1936;
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+    }
+
+    footer div {
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #1c4ed8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    footer p, footer a {
+      font-size: 14px;
+      color: #dcdcdc;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .insta { background-color: #e1306c; }
+    .whats { background-color: #25d366; }
+
+    .copyright {
+      text-align: center;
+      color: #ccc;
+      margin-top: 10px;
+      font-size: 12px;
+      width: 100%;
+    }
+    
+    /* -------- ESTILOS DEL FORMULARIO PERFIL (MANTENIDOS) -------- */
     main {
       flex: 1;
       display: flex;
@@ -59,7 +139,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       overflow: hidden;
     }
-    /* ... (resto de estilos del formulario de perfil) ... */
+
     .form-header {
       background-color: #0a3d91;
       color: #fff;
@@ -138,31 +218,30 @@
     button:hover {
       background-color: #072f6d;
     }
-
   </style>
 </head>
 <body>
 
-    <div class="navbar">
-    <div class="navbar-logo">
-        <img src="logo.jpg" alt="Logo Comodoro Joven Activo"> 
-        <span>Comodoro Joven Activo</span>
-    </div>
-    <div class="navbar-icons">
-      <a href="index.html">Inicio</a>
-      <a href="trabajo.html">Trabajo</a>
-      <a href="capacitaciones.html">Capacitaciones</a>
-      <a href="estudiantes.html">Estudiantes</a>
-      <a href="voluntariado.html">Voluntariado</a>
-      <a href="calendario.html">Calendario</a>
-      <a href="perfil.html">Perfil</a>
+    <header>
+    <div class="logo-container">
+      <img src="descargar intento 100.png" alt="Logo Comodoro Joven Activo">
+      <span>Comodoro Joven Activo</span>
     </div>
-  </div>
+    <nav>
+            <a href="index.html">Inicio</a>
+      <a href="trabajo.index">Trabajo</a>
+      <a href="capacitacion.index">Capacitación</a>
+      <a href="estudiantes.index">Estudiantes</a>
+      <a href="voluntariado.index">Voluntariado</a>
+      <a href="calendario.index">Calendario</a>
+      <a href="perfil.index">Perfil</a>
+    </nav>
+  </header>
 
     <main>
     <div class="form-card">
       <div class="form-header">
-                <img src="logo.jpg" alt="Logo">
+        <img src="descargar intento 100.png" alt="Logo">
         <h2>BIENVENIDO</h2>
         <p>a Comodoro Jóvenes Activo</p>
       </div>
@@ -216,51 +295,47 @@
     </div>
   </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-box">
-                <h3>Comodoro Joven Activo</h3>
-                <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
-                <div class="footer-social">
-                    <a href="#"></a>
-                    <a href="#"></a>
-                </div>
-            </div>
-            <div class="footer-box">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="trabajo.html">Trabajos</a></li>
-                    <li><a href="capacitaciones.html">Capacitaciones</a></li>
-                    <li><a href="voluntariado.html">Voluntariados</a></li>
-                    <li><a href="estudiantes.html">Estudiantes</a></li>
-                </ul>
-            </div>
-            <div class="footer-box"> 
-                <h4>Ayuda y Soporte</h4>
-                <ul>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Atención al Cliente</a></li>
-                    <li><a href="#">Soporte Técnico</a></li>
-                </ul>
-            </div>
-            <div class="footer-box">
-                <h4>Contactar Desarrolladores</h4>
-                <ul>
-                    <li><a href="mailto:dev@comodoroja.com">Comodorocja@gmail.com</a></li>
-                    <li><a href="tel:+542972134567">+54 297 123-4567</a></li>
-                    <li>Chat en vivo: 9-18hs</li>
-                    <li><a href="#">@comodoroja_dev</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Comodoro Joven Activo — Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <footer>
+    <div>
+      <h3>Comodoro Joven Activo</h3>
+      <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
+      <div class="social-icons">
+        <a href="#" class="insta">📷</a>
+        <a href="#" class="whats">💬</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Enlaces Rápidos</h3>
+      <a href="#">Trabajos</a><br>
+      <a href="#">Capacitaciones</a><br>
+      <a href="#">Voluntariados</a><br>
+      <a href="#">Estudiantes</a>
+    </div>
+
+    <div>
+      <h3>Ayuda y Soporte</h3>
+      <a href="#">Preguntas Frecuentes</a><br>
+      <a href="#">Atención al Cliente</a><br>
+      <a href="#">Soporte Técnico</a>
+    </div>
+
+    <div>
+      <h3>Contactar Desarrolladores</h3>
+      <p>📧 dev@comodoroja.com</p>
+      <p>📞 +54 297 123-4567</p>
+      <p>💬 Chat en vivo: 9–18hs</p>
+      <p>📸 @comodoroja_dev</p>
+    </div>
+
+    <div class="copyright">
+      © 2025 Comodoro Joven Activo. Todos los derechos reservados. | Desarrollado por y para jóvenes.
+    </div>
+  </footer>
 
 
   <script>
-    // CAMBIO ENTRE PESTAÑAS (MANTENIDO)
+    // CAMBIO ENTRE PESTAÑAS
     const tabRegister = document.getElementById('tab-register');
     const tabLogin = document.getElementById('tab-login');
     const formRegister = document.getElementById('form-register');
