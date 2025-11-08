@@ -4,26 +4,133 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comodoro Joven Activo - Calendario</title>
-    <link rel="stylesheet" href="inicio.css"> 
   <style>
-    body {
+    /* -------- ESTILOS GENERALES Y LAYOUT -------- */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f4f6;
-      color: #111827;
-      /* Asegura que el footer se quede abajo */
-      min-height: 100vh; 
-      display: flex;
-      flex-direction: column;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
     }
 
-    /* Necesario para que el contenido principal ocupe el espacio */
+    body {
+      background: #f3f4f6; /* Color de fondo del calendario */
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* ============================================ */
+    /* ESTILOS ESTANDARIZADOS DE LA BARRA (COPIADOS DEL PERFIL) */
+    /* ============================================ */
+    header {
+      background-color: #0a3d91; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 100px;
+      margin-right: 0,1px;
+    }
+
+    .logo-container span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================================ */
+    /* ESTILOS ESTANDARIZADOS DEL FOOTER (COPIADOS DEL PERFIL) */
+    /* ============================================ */
+    footer {
+      background-color: #0b1936;
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+      margin-top: auto; /* Empuja el footer hacia abajo */
+    }
+
+    footer div {
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #1c4ed8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    footer p, footer a {
+      font-size: 14px;
+      color: #dcdcdc;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .insta { background-color: #e1306c; }
+    .whats { background-color: #25d366; }
+
+    .copyright {
+      text-align: center;
+      color: #ccc;
+      margin-top: 10px;
+      font-size: 12px;
+      width: 100%;
+    }
+
+    /* -------- ESTILOS DEL CONTENIDO DEL CALENDARIO (MANTENIDOS) -------- */
     main {
       padding: 30px 60px;
-      flex-grow: 1; /* Esto hace que main se estire */
+      flex-grow: 1;
     }
 
-    /* Estilos específicos del calendario (MANTENIDOS) */
     .filtros {
       display: flex;
       gap: 10px;
@@ -38,13 +145,13 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
+    
     .filtros button.active {
       background-color: black;
       color: white;
     }
-    /* ... (resto de estilos del calendario) ... */
-    .calendario {
+
+    .calendario {
       background: white;
       border-radius: 15px;
       padding: 20px;
@@ -119,28 +226,119 @@
     }
 
     .acciones .compartir { background-color: white; }
-    /* ... (resto de estilos del calendario, modales, etc.) ... */
+    
+    /* --- ESTADÍSTICAS (MANTENIDOS) --- */
+    .estadisticas {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    .estadisticas h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .estadistica {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .estadistica.total {
+      background-color: #eef4ff;
+      color: #1e3a8a;
+    }
+
+    .estadistica.capacitaciones {
+      background-color: #ecfdf5;
+      color: #059669;
+    }
+
+    .estadistica.voluntariados {
+      background-color: #f0fdfa;
+      color: #047857;
+    }
+
+    .estadistica.ofertas {
+      background-color: #f5f3ff;
+      color: #7c3aed;
+    }
+
+    .estadistica .numero {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* --- MODALES (MANTENIDOS) --- */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .modal-content h3 { margin-bottom: 15px; }
+
+    .modal-content input, .modal-content select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal-content button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      margin: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .guardar { background-color: #2563eb; color: white; }
+    .cancelar { background-color: #ccc; }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="navbar">
-    <div class="navbar-logo">
-        <img src="logo.jpg" alt="Logo Comodoro Joven Activo"> 
-        <span>Comodoro Joven Activo</span>
-    </div>
-    <div class="navbar-icons">
-      <a href="index.html">Inicio</a>
-      <a href="trabajo.html">Trabajo</a>
-      <a href="capacitaciones.html">Capacitaciones</a>
-      <a href="estudiantes.html">Estudiantes</a>
-      <a href="voluntariado.html">Voluntariado</a>
-      <a href="calendario.html">Calendario</a>
-      <a href="perfil.html">Perfil</a>
+    <header>
+    <div class="logo-container">
+      <img src="descargar intento 100.png" alt="Logo Comodoro Joven Activo">
+      <span>Comodoro Joven Activo</span>
     </div>
-  </div>
-
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="trabajo.index">Trabajo</a>
+      <a href="capacitacion.index">Capacitación</a>
+      <a href="estudiantes.index">Estudiantes</a>
+      <a href="voluntariado.index">Voluntariado</a>
+      <a href="calendario.index">Calendario</a>
+      <a href="perfil.index">Perfil</a>
+    </nav>
+  </header>
 
   <main>
     <h1>Calendario de Eventos</h1>
@@ -152,7 +350,6 @@
       <button data-tipo="capacitacion">Capacitaciones</button>
       <button data-tipo="estudiantes">Estudiantes</button>
       <button data-tipo="voluntariado">Voluntariados</button>
-      <button>Otro</button>
     </div>
 
     <section class="calendario">
@@ -169,7 +366,7 @@
       <button class="agregar"><i class="fas fa-calendar-plus"></i> Agregar a mi calendario</button>
       <button class="compartir"><i class="fas fa-share-alt"></i> Compartir calendario</button>
     </section>
-    
+
     <section class="estadisticas">
         <h2>Estadísticas del Mes</h2>
         <div class="estadistica total">
@@ -205,9 +402,9 @@
       <button class="guardar" id="guardarEvento">Guardar</button>
       <button class="cancelar" id="cerrarAgregar">Cancelar</button>
     </div>
-    </div>
+  </div>
 
-      <div class="modal" id="modalCompartir">
+    <div class="modal" id="modalCompartir">
     <div class="modal-content">
       <h3>Compartir Calendario</h3>
       <input type="email" placeholder="Cuenta de Google">
@@ -217,48 +414,43 @@
     </div>
   </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-box">
-                <h3>Comodoro Joven Activo</h3>
-                <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
-                <div class="footer-social">
-                    <a href="#"></a>
-                    <a href="#"></a>
-                </div>
-            </div>
-            <div class="footer-box">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="trabajo.html">Trabajos</a></li>
-                    <li><a href="capacitaciones.html">Capacitaciones</a></li>
-                    <li><a href="voluntariado.html">Voluntariados</a></li>
-                    <li><a href="estudiantes.html">Estudiantes</a></li>
-                </ul>
-            </div>
-            <div class="footer-box"> 
-                <h4>Ayuda y Soporte</h4>
-                <ul>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                    <li><a href="#">Atención al Cliente</a></li>
-                    <li><a href="#">Soporte Técnico</a></li>
-                </ul>
-            </div>
-            <div class="footer-box">
-                <h4>Contactar Desarrolladores</h4>
-                <ul>
-                    <li><a href="mailto:dev@comodoroja.com">Comodorocja@gmail.com</a></li>
-                    <li><a href="tel:+542972134567">+54 297 123-4567</a></li>
-                    <li>Chat en vivo: 9-18hs</li>
-                    <li><a href="#">@comodoroja_dev</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Comodoro Joven Activo — Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <footer>
+    <div>
+      <h3>Comodoro Joven Activo</h3>
+      <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
+      <div class="social-icons">
+        <a href="#" class="insta">📷</a>
+        <a href="#" class="whats">💬</a>
+      </div>
+    </div>
 
+    <div>
+      <h3>Enlaces Rápidos</h3>
+      <a href="#">Trabajos</a><br>
+      <a href="#">Capacitaciones</a><br>
+      <a href="#">Voluntariados</a><br>
+      <a href="#">Estudiantes</a>
+    </div>
+
+    <div>
+      <h3>Ayuda y Soporte</h3>
+      <a href="#">Preguntas Frecuentes</a><br>
+      <a href="#">Atención al Cliente</a><br>
+      <a href="#">Soporte Técnico</a>
+    </div>
+
+    <div>
+      <h3>Contactar Desarrolladores</h3>
+      <p>📧 dev@comodoroja.com</p>
+      <p>📞 +54 297 123-4567</p>
+      <p>💬 Chat en vivo: 9–18hs</p>
+      <p>📸 @comodoroja_dev</p>
+    </div>
+
+    <div class="copyright">
+      © 2025 Comodoro Joven Activo. Todos los derechos reservados. | Desarrollado por y para jóvenes.
+    </div>
+  </footer>
 
   <script>
     // CÓDIGO JAVASCRIPT DEL CALENDARIO (MANTENIDO)
