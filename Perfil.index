@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comodoro Joven Activo</title>
+  <style>
+    /* -------- ESTILOS GENERALES -------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #eaf4ff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* -------- NAVBAR -------- */
+    header {
+      background-color: #0a3d91;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 50px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container img {
+      height: 100px;
+      margin-right: 0,1px;
+    }
+
+    .logo-container span {
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* -------- FORMULARIO -------- */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .form-card {
+      background: #fff;
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .form-header {
+      background-color: #0a3d91;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .form-header img {
+      width: 110px;
+      margin-bottom: 10px;
+    }
+
+    .tabs {
+      display: flex;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #f5f5f5;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tab.active {
+      background-color: #fff;
+      border-bottom: 2px solid #0a3d91;
+      font-weight: bold;
+    }
+
+    form {
+      padding: 20px;
+      display: none;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .checkbox {
+      margin-top: 10px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #0a3d91;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #072f6d;
+    }
+
+    /* -------- FOOTER -------- */
+    footer {
+      background-color: #0b1936;
+      color: #fff;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+    }
+
+    footer div {
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+      border-bottom: 2px solid #1c4ed8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    footer p, footer a {
+      font-size: 14px;
+      color: #dcdcdc;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .insta { background-color: #e1306c; }
+    .whats { background-color: #25d366; }
+
+    .copyright {
+      text-align: center;
+      color: #ccc;
+      margin-top: 10px;
+      font-size: 12px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo-container">
+      <img src="descargar intento 100.png" alt="Logo Comodoro Joven Activo">
+      <span>Comodoro Joven Activo</span>
+    </div>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Trabajo</a>
+      <a href="#">Capacitación</a>
+      <a href="#">Estudiantes</a>
+      <a href="#">Voluntariado</a>
+      <a href="#">Calendario</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <!-- FORMULARIO -->
+  <main>
+    <div class="form-card">
+      <div class="form-header">
+        <img src="descargar intento 100.png" alt="Logo">
+        <h2>BIENVENIDO</h2>
+        <p>a Comodoro Jóvenes Activo</p>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" id="tab-register">Crear cuenta</div>
+        <div class="tab" id="tab-login">Iniciar sesión</div>
+      </div>
+
+      <!-- FORMULARIO REGISTRO -->
+      <form id="form-register" class="active">
+        <label>Nombre</label>
+        <input type="text" placeholder="Tu nombre">
+
+        <label>Apellido</label>
+        <input type="text" placeholder="Tu apellido">
+
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="tu@correo.com">
+
+        <label>Fecha de nacimiento</label>
+        <input type="date">
+
+        <div class="checkbox">
+          <input type="checkbox" id="estudiante">
+          <label for="estudiante">Soy estudiante</label>
+        </div>
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="********">
+
+        <label>Confirmar contraseña</label>
+        <input type="password" placeholder="********">
+
+        <div class="checkbox">
+          <input type="checkbox" id="terminos">
+          <label for="terminos">Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a></label>
+        </div>
+
+        <button type="submit">Crear cuenta</button>
+      </form>
+
+      <!-- FORMULARIO LOGIN -->
+      <form id="form-login">
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="tu@correo.com">
+
+        <label>Contraseña</label>
+        <input type="password" placeholder="********">
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <h3>Comodoro Joven Activo</h3>
+      <p>Conectando jóvenes con oportunidades en Comodoro Rivadavia, Chubut.</p>
+      <div class="social-icons">
+        <a href="#" class="insta">📷</a>
+        <a href="#" class="whats">💬</a>
+      </div>
+    </div>
+
+    <div>
+      <h3>Enlaces Rápidos</h3>
+      <a href="#">Trabajos</a><br>
+      <a href="#">Capacitaciones</a><br>
+      <a href="#">Voluntariados</a><br>
+      <a href="#">Estudiantes</a>
+    </div>
+
+    <div>
+      <h3>Ayuda y Soporte</h3>
+      <a href="#">Preguntas Frecuentes</a><br>
+      <a href="#">Atención al Cliente</a><br>
+      <a href="#">Soporte Técnico</a>
+    </div>
+
+    <div>
+      <h3>Contactar Desarrolladores</h3>
+      <p>📧 dev@comodoroja.com</p>
+      <p>📞 +54 297 123-4567</p>
+      <p>💬 Chat en vivo: 9–18hs</p>
+      <p>📸 @comodoroja_dev</p>
+    </div>
+
+    <div class="copyright">
+      © 2025 Comodoro Joven Activo. Todos los derechos reservados. | Desarrollado por y para jóvenes.
+    </div>
+  </footer>
+
+  <script>
+    // CAMBIO ENTRE PESTAÑAS
+    const tabRegister = document.getElementById('tab-register');
+    const tabLogin = document.getElementById('tab-login');
+    const formRegister = document.getElementById('form-register');
+    const formLogin = document.getElementById('form-login');
+
+    tabRegister.addEventListener('click', () => {
+      tabRegister.classList.add('active');
+      tabLogin.classList.remove('active');
+      formRegister.classList.add('active');
+      formLogin.classList.remove('active');
+    });
+
+    tabLogin.addEventListener('click', () => {
+      tabLogin.classList.add('active');
+      tabRegister.classList.remove('active');
+      formLogin.classList.add('active');
+      formRegister.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
